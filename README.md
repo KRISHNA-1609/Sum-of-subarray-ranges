@@ -1,1 +1,24 @@
 # Sum-of-subarray-ranges
+class Solution {
+    public long subArrayRanges(int[] nums) {
+        int n = nums.length;
+        long ans = 0;
+        for(int i=0;i<n;i++){
+            int minv = nums[i];
+            int maxv = nums[i];
+            for(int j=i;j<n;j++){
+                maxv = Math.max(maxv , nums[j]);
+                minv = Math.min(minv , nums[j]);
+                ans += maxv-minv;
+            }
+
+        }
+        return ans;
+    }
+
+    public static void main(String[] args){
+        Solution S = new Solution();
+        int [] nums = {1,2,3};
+       S. subArrayRanges(nums);
+    }
+}
